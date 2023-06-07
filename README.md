@@ -55,42 +55,97 @@ D7 = X Y Z
 ## Figure -04 8 to 3 Decoder implementation 
 
 ### Procedure
-/* write all the steps invloved */
 
+Step-1: create module encoder and decoder.
+
+Step-2: Get inputs and outputs for encoders and decoders.
+
+Step-3: perform or operation for encoder and and logic for decoders.
+
+Step-4: perform RTL LOGIC and get waveform.
+
+Step-5: End the module.
 
 
 ### PROGRAM 
-/*
+
 Program for Endocers and Decoders  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
-*/
+```
+Developed by: Sandhiya R
+RegisterNumber:  212222230129
+```
+### ENCODER
+```
+      module enc(a0,a1,a2,y0,y1,y2,y3,y4,y5,y6,y7);
+      input y0,y1,y2,y3,y4,y5,y6,y7;
+      output a0,a1,a2;
+      or(a0,y7,y5,y3,y1);
+      or(a1,y7,y6,y3,y2);
+      or(a2,y7,y6,y5,y4);
+      endmodule
+```
 
-
-
-
-
+### DECODER
+```
+      module dec (a0,a1,a2,y0,y1,y2,y3,y4,y5,y6,y7);
+      input a0,a1,a2;
+      output y0,y1,y2,y3,y4,y5,y6,y7;
+      wire a0bar,a1bar,a2bar;
+      not(a0bar,a0);
+      not(a1bar,a1);
+      not(a2bar,a2);
+      and(y0,a0bar,a1bar,a2bar);
+      and(y1,a0,a1bar,a2bar);
+      and(y2,a0bar,a1,a2bar);
+      and(y3,a0,a1,a2bar);
+      and(y4,a0bar,a1bar,a2);
+      and(y5,a0,a1bar,a2);
+      and(y6,a0bar,a1,a2);
+      and(y7,a0,a1,a2);
+      endmodule
+  ```
 
 ### RTL LOGIC  
 
 
+### ENCODER
+
+![243266041-4c06bc58-e8a0-4b14-ba96-20f8efddc801](https://github.com/SandhiyaR1/Experiment-08-Encoders-and-decoders-/assets/113497571/94c6e553-48dd-4ae5-87b8-de39e137f337)
 
 
+### DECODER
+![243266061-a0c11ef0-1625-47ba-8cb0-b5a580469fd3](https://github.com/SandhiyaR1/Experiment-08-Encoders-and-decoders-/assets/113497571/28d98ed3-dbb3-423c-9bd7-886a9e572295)
 
 
 
 
 ### TIMING DIGRAMS  
 
+### ENCODER
 
+![243266113-2158fee9-74d3-46a3-bb92-6005be8636c6](https://github.com/SandhiyaR1/Experiment-08-Encoders-and-decoders-/assets/113497571/6f4b5e79-abf2-4bea-b79e-c067e39f41fc)
+
+### DECODER
+
+
+![243266339-6304c066-b2b0-4e5e-a6de-fbbc6d341df2](https://github.com/SandhiyaR1/Experiment-08-Encoders-and-decoders-/assets/113497571/e8fd0446-c35a-44f1-8735-015128015d57)
 
 
 
 ### TRUTH TABLE 
 
+### ENCODER
 
+
+![image](https://github.com/SandhiyaR1/Experiment-08-Encoders-and-decoders-/assets/113497571/a6caa085-e303-4ebc-be32-483849516afd)
+
+### DECODER
+
+![image](https://github.com/SandhiyaR1/Experiment-08-Encoders-and-decoders-/assets/113497571/b5d5df06-6b67-4164-968b-2628d161c891)
 
 
 
 
 ### RESULTS 
+
+Thus the program to design encoder and decoder is successfully completed.
